@@ -1,0 +1,4 @@
+alias sp-tc='f() { cd /home/yanuar/Workspace/gitlab/trackercore }; f'
+alias sp-gl='f() { cd /home/yanuar/Workspace/gitlab/ }; f'
+alias sp-w='f() { cd /home/yanuar/Workspace/ }; f'
+alias sp-b='f() { cd /home/yanuar/Workspace/builds }; f'
