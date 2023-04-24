@@ -1,0 +1,66 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+shift+alt+k 1",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "ctrl+shift+alt+o",
+    "command": "outline.focus"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+d d",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+alt+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+d f",
+    "command": "editor.action.revealDefinition"
+  },
+  {
+    "key": "ctrl+] b",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+[ b",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+r f",
+    "command": "workbench.action.debug.selectandstart",
+    "when": "!inDebugMode"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inFilesPicker && inQuickOpen"
+  }
+]
