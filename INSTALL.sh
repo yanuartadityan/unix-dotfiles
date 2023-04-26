@@ -1,5 +1,6 @@
 #!/bin/sh
 # -*- mode: bash; tab-width: 4; indent-tabs-mode: nil; -*-
+# yanuart.adityan[at]gmail.com
 
 set -e 
 
@@ -128,16 +129,91 @@ install_deps() {
   fi  
 # }
 
-# Copy dotfiles.
-install_dots() {
-  # Zsh and Oh-My-Zsh.
-  # Alacritty.
-  # Vim.
-  # Nvim.
-  # Tmux.
-  # VSCode.
-  # Alias.
+# Install applications.
+install_apps() {
+  # Install Zsh
+  echo "Installing ZSH and Oh-My-Zsh"
+  sudo apt-get install -y zsh
+  # Set default bash to zsh
+  chsh -s $(which zsh)
+  # Install Oh-My-Zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # Copy the .zshrc setting
+  cp ./.zshrc ./.zsh_aliases ~/
+  # Install zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+  # Install Vim
+  sudo apt-get install -y vim
+  cp ./.vimrc ~/
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+
+  # Install Alacritty
+  install_alacritty
+
+  # Install Tmux
+  sudo apt install -y tmux
+  cp ./.tmux.conf ~/
+  tmux source ~/.tmux.conf
+
+  # Install VSCode
+  if command ls ~/Downloads/Installer >/dev/null 2>&1; then
+    mkdir ~/Downloads/Installer 
+  fi
+  wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -O ~/Downloads/Installer/code.deb
+  sudo dpkg -i ~/Downloads/Installer/code.deb
+  if command ls ~/.config/Code >/dev/null 2>&1; then
+    mkdir ~/.config/Code/User
+  fi
+  cp ./vscode/* ~/.config/Code/User/
+
+  # Alias
+  cp ./.zsh_aliases ~/
+  cp ./.bash_aliases ~/
+  source ~/.zshrc
+}
+
+install_alacritty() {
+  # Install Rust
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  rustup override set stable
+  rustup update stable
+
+  # Install Alacritty
+  if command ls ~/Workspace >/dev/null 2>&1; then
+    mkdir ~/Workspace/github/alacritty
+  fi
+
+  git clone git clone https://github.com/alacritty/alacritty.git ~/Workspace/github/alacritty
+  sudo apt install -y \
+    pkg-config \
+    libfreetype6-dev \
+    libfontconfig1-dev \
+    libxcb-xfixes0-dev \
+    libxkbcommon-dev
+
+  local curr_dir=$(pwd)
+  cd ~/Workspace/github/alacritty && cargo build --release 
+  
+  # https://github.com/alacritty/alacritty/blob/master/INSTALL.md#install-the-rust-compiler-with-rustup
+  if command infocmp alacritty >/dev/null 2>&1; then
+    sudo tic -xe alacritty,alacritty-direct extra/alacritty.info 
+  fi
+  
+  # Add Alacritty to the desktop entry
+  sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
+  sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+  sudo desktop-file-install extra/linux/Alacritty.desktop
+  sudo update-desktop-database
+  
+  # Copy config 
+  if command ls ~/.config >/dev/null 2>&1; then
+    mkdir ~/.config/alacritty
+  fi
+  cd "${curr_dir}"
+  cp ./alacritty.yml ~/.config/alacritty 
 }
 
 install_deps
-install_dots
+install_apps
