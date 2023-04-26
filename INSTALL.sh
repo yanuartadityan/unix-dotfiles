@@ -139,13 +139,13 @@ install_apps() {
   # Install Oh-My-Zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # Copy the .zshrc setting
-  cp ./.zshrc ./.zsh_aliases ~/
+  cp ./dotfiles/.zshrc ./.zsh_aliases ~/
   # Install zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
   # Install Vim
   sudo apt-get install -y vim
-  cp ./.vimrc ~/
+  cp ./dotfiles/alacritty.yml ~/
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 
@@ -154,7 +154,7 @@ install_apps() {
 
   # Install Tmux
   sudo apt install -y tmux
-  cp ./.tmux.conf ~/
+  cp ./dotfiles/.tmux.conf ~/
   tmux source ~/.tmux.conf
 
   # Install VSCode
@@ -169,8 +169,8 @@ install_apps() {
   cp ./vscode/* ~/.config/Code/User/
 
   # Alias
-  cp ./.zsh_aliases ~/
-  cp ./.bash_aliases ~/
+  cp ./dotfiles/.zsh_aliases ~/
+  cp ./dotfiles/.bash_aliases ~/
   source ~/.zshrc
 }
 
@@ -212,7 +212,7 @@ install_alacritty() {
     mkdir ~/.config/alacritty
   fi
   cd "${curr_dir}"
-  cp ./alacritty.yml ~/.config/alacritty 
+  cp ./dotfiles/alacritty.yml ~/.config/alacritty 
 }
 
 install_deps
