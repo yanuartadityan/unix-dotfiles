@@ -105,7 +105,7 @@ install_unknown() {
 }
 
 # Main entry.
-main() {
+install_deps() {
   # Check distribution and package manager to use.
   if [ "$(uname -s)" = "Linux" ]; then
     #! NOTE: Linux FTW.
@@ -128,4 +128,16 @@ main() {
   fi  
 # }
 
-main
+# Copy dotfiles.
+install_dots() {
+  # Zsh and Oh-My-Zsh.
+  # Alacritty.
+  # Vim.
+  # Nvim.
+  # Tmux.
+  # VSCode.
+  # Alias.
+}
+
+install_deps
+install_dots
