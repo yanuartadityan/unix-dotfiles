@@ -231,6 +231,7 @@ install_apps() {
 	install_vim
 	install_alacritty
 	install_tmux
+	install_vscode
 
 	# Alias
 	cp ./dotfiles/.zsh_aliases ~/
