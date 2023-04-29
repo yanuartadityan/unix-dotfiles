@@ -7,7 +7,6 @@ alias vbase='vim ~/.zsh_aliases'
 alias als='cat ~/.bash_aliases | grep alias'
 alias alconf='nvim ~/.config/alacritty/alacritty.yml'
 alias tmconf='nvim ~/.tmux.conf'
-alias nvim='~/App/neovim/nvim.appimage'
 
 alias ll='ls -al'
 
