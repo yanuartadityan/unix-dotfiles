@@ -226,18 +226,51 @@ install_vscode() {
 }
 
 # Install applications.
-install_apps() {
-	install_zsh
-	install_vim
-	install_alacritty
-	install_tmux
-	install_vscode
-
+install_alias() {
 	# Alias
 	cp ./dotfiles/.zsh_aliases ~/
 	cp ./dotfiles/.bash_aliases ~/
-	source ~/.zshrc
+
+	if [ -d "${HOME}/.zshrc" ]; then
+		. ${HOME}/.zshrc
+	fi
 }
 
-install_deps
-install_apps
+install() {
+	if [ $1 = "all" ] || [ $1 = "deps" ]; then
+		echo "Installing Dependencies..."
+		install_deps
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "zsh" ]; then
+		echo "Installing ZSH..."
+		install_zsh
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "vim" ]; then
+		echo "Installing Vim..."
+		install_vim
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "alacritty" ]; then
+		echo "Installing Alacritty..."
+		install_alacritty
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "tmux" ]; then
+		echo "Installing Tmux..."
+		install_tmux
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "vscode" ]; then
+		echo "Installing VSCode..."
+		install_vscode
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "alias" ]; then
+		echo "Installing Alias..."
+		install_alias
+	fi
+}
+
+install $1
