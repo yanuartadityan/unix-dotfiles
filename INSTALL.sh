@@ -251,8 +251,8 @@ install_fonts() {
 		sudo apt install unzip
 	fi
 
-	unzip /tmp/${font1}.zip -d ~/.fonts/
-	unzip /tmp/${font2}.zip -d ~/.fonts/
+	unzip -o /tmp/${font1}.zip -d ~/.fonts/
+	unzip -o /tmp/${font2}.zip -d ~/.fonts/
 }
 
 install() {
