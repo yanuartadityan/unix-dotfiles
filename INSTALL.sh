@@ -236,6 +236,25 @@ install_alias() {
 	fi
 }
 
+# Install fonts.
+install_fonts() {
+	# Fonts
+	local font1="JetBrainsMono"
+	local font2="FantasqueSansMono"
+
+	echo "Getting ${font1} Nerd Font Complete..."
+	curl -fLo "/tmp/${font1}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/${font1}.zip"
+	echo "Getting ${font2} Nerd Font Complete..."
+	curl -fLo "/tmp/${font2}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/${font2}.zip"
+
+	if ! command -v unzip >/dev/null 2>&1; then
+		sudo apt install unzip
+	fi
+
+	unzip /tmp/${font1}.zip -d ~/.fonts/
+	unzip /tmp/${font2}.zip -d ~/.fonts/
+}
+
 install() {
 	if [ $1 = "all" ] || [ $1 = "deps" ]; then
 		echo "Installing Dependencies..."
@@ -270,6 +289,11 @@ install() {
 	if [ $1 = "all" ] || [ $1 = "alias" ]; then
 		echo "Installing Alias..."
 		install_alias
+	fi
+
+	if [ $1 = "all" ] || [ $1 = "font" ]; then
+		echo "Installing Fonts..."
+		install_fonts
 	fi
 }
 
