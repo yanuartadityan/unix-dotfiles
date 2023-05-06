@@ -1,0 +1,288 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "SEP: Analyze Driverchange Logs",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/driverchange/83005-DMF-4a7fa078de1d-2023-01-19-140132",
+        "--num-workers", "12",
+        "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Analyze Blink Logs",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/455-kpi-external.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/blinkevent/75817-N-5ba00e323238-2022-10-26-191228",
+        "--num-workers", "1",
+        "--log-level", "DEBUG"
+      ]
+    },
+    {
+      "name": "SEP: Analyze Drowsiness Logs",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/drowsiness/86581-Drowsiness-42bc6b166ab1-2023-02-18-094959/",
+        "--num-workers", "12",
+        // "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Analyze SecTask Logs",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/secondarytask/55467-Q-fdbeeac8983c-2022-09-05-132854-phoning/",
+        "--num-workers", "1"
+        // "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Analyze Eyelid Logs",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/463-kpi-external",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eyelid/71602-L-28f2e68f7ee3-2023-01-31-163149/",
+        "--num-workers", "12",
+        "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Analyze VT/Eyes-on-Road",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eyesonroad/83236-DMF-d94b85e77b79-2023-01-23-140650",
+        "--num-workers", "1",
+        "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Create KPI Reports",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/run_kpi_reports.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/463-kpi-external.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eyelid/71602-L-28f2e68f7ee3-2023-01-31-163149/",
+        "--log-level", "DEBUG"
+      ]
+    },
+    {
+      "name": "SEP: Dry Run Publish KPI",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/run_kpi_publish.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--dry-run",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eyelid/71602-L-28f2e68f7ee3-2023-01-31-163149"
+      ]
+    },
+    {
+      "name": "Util: Slice SecTask Artifacts",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/secondarytask/55467-Q-fdbeeac8983c-2022-09-05-132854",
+        "--out-dir", "/home/yanuar/Downloads/Artifacts/secondarytask/55467-Q-fdbeeac8983c-2022-09-05-132854-phoning",
+        "--reg-arg", "CAM1-[56]"
+      ]
+    },
+    {
+      "name": "Util: Refactor Driver Change Recordings",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--json-dir", "/home/yanuar/Workspace/gitlab/trackercore/output/trace/dmf1267/dm145_driverchange_old.json",
+        "--out-dir", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/movies/",
+      ]
+    },
+    {
+      "name": "Util: SEDM CLI",
+      "type": "python",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/trackercore/apps/sedmlogwriter/client/",
+      "program": "${workspaceFolder}/trackercore/apps/sedmlogwriter/client/cli.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--server-interface", "/home/yanuar/Workspace/gitlab/trackercore/build/trackercore/apps/sedmlogwriter/interface/",
+        "localhost:9000",
+        "/home/yanuar/Downloads/Recordings/dac059-distraction/DAC059-1116-5849-S1-20221117T093254.sma",
+        "--select-cameras", "3",
+        "--world-model-list", "/home/yanuar/Downloads/Recordings/dac059-distraction/BMW_X1-kss_with_road.json",
+      ]
+    },
+    {
+      "name": "Util: SEDM GUI",
+      "type": "python",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/trackercore/apps/sedmlogwriter/client/",
+      "program": "${workspaceFolder}/trackercore/apps/sedmlogwriter/client/gui.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--server-interface", "/home/yanuar/Workspace/gitlab/trackercore/build/trackercore/apps/sedmlogwriter/interface/",
+        "localhost:9000",
+        "/home/yanuar/Downloads/Recordings/dac059-distraction/DAC059-1116-5849-S1-20221117T093254.sma",
+        "--select-cameras", "3",
+        "--world-model-list", "/home/yanuar/Downloads/Recordings/dac059-distraction/BMW_X1-kss_with_road.json",
+      ]
+    },
+    {
+      "name": "Util: Filter Movies Debug",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/output/dm1449_tryout.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "-j", "/tmp/build/output/recordings_all.json",
+        "--gt-path", "/mnt/work/AnnotationData",
+        "-o", "/tmp/output",
+        "--config", "assets-bla-bla",
+        "--nas-mount-point", "//nas"
+      ]
+    },
+    {  // This equivalent to run-generate-event-annotation
+      "name": "Util: Run Event Preprocessing",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/event_analysis/generate_annotations.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "-j", "/home/yanuar/Downloads/Artifacts/eventkpi/kpi-bin/output/output/recordings.json",
+        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/annotation-data/generated/",
+        "--gt-path", "/home/yanuar/Workspace/gitlab/annotationdata/",
+        "-l", "/mnt/nas/Artifacts/SmarteyeEmbedded/TrackerCore/kpi-archive/manual-trigger/SleepEye-highway-cam-1-rem.json/92104-DMF-26605c0112c2-2023-05-03-191627"
+      ]
+    },
+    {  // This equivalent to run-event-kpi-analysis
+      "name": "Util: Run Event KPI",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/event_analysis/run_event_kpi.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        // Use the recordings.json to get individual recording index
+        "-j", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556/recordings.json",
+        // Event KPI config (yawning_kpi.yaml or blink_kpi.yaml)
+        "-c", "${workspaceFolder}/convert-analyze/kpi/event_analysis/assets/all_kpi.yaml",
+        // Annotation GT repo, which apparently also the artifact from annotation-data workflow
+        "-gt", "/home/yanuar/Workspace/gitlab/annotationdata/",
+        // Prediction which is artifact from run-generate-event-annotation (-o)
+        "-pr", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556/annotations/",
+        // Logs, obviously the archive a.k.a output from build step
+        "-l", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556/",
+        // Analysis output (VERBOSE output for now)
+        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/analysis-output/",
+        // NAS mount point.
+        "--nas-mount-point", "/mnt/nas"
+      ]
+    },
+    {
+      "name": "Util: Run Export DMF GT AnnotData",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/event_analysis/export_gt.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "-gt", "/home/yanuar/Workspace/gitlab/annotationdata/",
+        "-ar", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556",
+        "-c", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/event_analysis/assets/all_kpi.yaml",
+        "-o", "${userHome}/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556", 
+        "-nas", "/mnt/nas",
+        "-cam", "1"
+      ]
+    },
+    {
+      "name": "DMF: Drowsiness Warning Analysis",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/output/dmf1525/analyze_kpi_run.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "-d",
+        "-w", "/home/yanuar/Downloads/Artifacts/drowsiness/86581-Drowsiness-42bc6b166ab1-2023-02-18-094959/"
+      ]
+    }
+  ]
+}
