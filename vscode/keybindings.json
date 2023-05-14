@@ -49,11 +49,6 @@
     "command": "-workbench.action.previousEditor"
   },
   {
-    "key": "ctrl+r f",
-    "command": "workbench.action.debug.selectandstart",
-    "when": "!inDebugMode"
-  },
-  {
     "key": "ctrl+n",
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inFilesPicker && inQuickOpen"
@@ -62,5 +57,17 @@
     "key": "ctrl+p",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "shift+alt+enter",
+    "command": "workbench.action.toggleEditorWidths"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.terminal.resizePaneDown"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.terminal.resizePaneUp"
   }
 ]

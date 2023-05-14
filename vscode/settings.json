@@ -1,5 +1,5 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "helium-icon-theme",
   "editor.tabSize": 2,
   // "cmake.buildDirectory": "${userHome}/Workspace/builds/${workspaceRootFolderName}/${variant:customer}/${buildType}",
   "cmake.configureOnOpen": true,
@@ -13,7 +13,7 @@
     "*.py": "python"
   },
   "todohighlight.isEnable": true,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+  "editor.fontFamily": "'JetBrainsSansMono Nerd Font', 'monospace', monospace",
   "editor.fontLigatures": false,
   "gitlens.autolinks": [
     {
@@ -30,18 +30,29 @@
   "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "n"],
-      "commands": [":nohl"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     }
   ],
   "vim.handleKeys": {
     "<C-f>": false,
+    "<C-h>": false,
     "<C-a>": false,
     "<C-w>": false,
     "<C-d>": true,
@@ -56,8 +67,7 @@
   "vim.smartRelativeLine": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "underline-thin",
-  "vim.cursorStylePerMode.normal": "block-outline",
-  "workbench.colorTheme": "Community Material Theme Ocean",
+  "workbench.colorTheme": "Xcode Partial (Dark)",
   "glassit.alpha": 255,
   "window.menuBarVisibility": "toggle",
   "markdown-preview-enhanced.previewTheme": "one-dark.css",
@@ -68,16 +78,18 @@
     "editor.autoIndent": "advanced"
   },
   "editor.formatOnSave": true,
-  // Using the light mode
   "indentRainbow.indicatorStyle": "light",
-  // we use a simple 1 pixel wide line
   "indentRainbow.lightIndicatorStyleLineWidth": 1,
-  // the same colors as above but more visible
   "indentRainbow.colors": [
     "rgba(255,255,64,0.3)",
     "rgba(127,255,127,0.3)",
     "rgba(255,127,255,0.3)",
     "rgba(79,236,236,0.3)"
   ],
-  "window.zoomLevel": -1
+  "workbench.tree.indent": 10,
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.activeBackground": "#00AFFF",
+    "tree.indentGuidesStroke": "#00AFFF",
+    "tree.inactiveIndentGuidesStroke": "#4D4D4D"
+  }
 }
