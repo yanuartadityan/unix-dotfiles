@@ -13,6 +13,7 @@ alias ll='ls -al'
 alias vse='source ~/Workspace/.se/bin/activate'
 alias vdl='source ~/Workspace/.dl/bin/activate'
 alias vfa='source ~/Workspace/.fapi/bin/activate'
+alias vfa='source ~/Workspace/.fapi/bin/activate'
 
 # smart-eye specific
 alias cwtc='cd $HOME/Workspace/gitlab/trackercore'
@@ -20,6 +21,7 @@ alias cbtc='cd $HOME/Workspace/builds/tc'
 alias sedo='/home/yanuar/Workspace/gitlab/trackercore/sedo'
 alias seshow='cat ~/.config/sedo/sedo.yml'
 alias sekpi='/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/utils/drowsiness/analyze_kpi_run.py'
+alias sema='sudo mount -a'
 
 # git
 alias gg='git status'
@@ -34,6 +36,10 @@ alias gco='git checkout'
 alias gr='git remote'
 alias gb='git branch'
 alias gf='cat ~/Workspace/gitlab/onboarding/git_flow.txt'
+alias gst='git stash'
+alias gsl='git stash list'
+alias gsp='git stash pop'
+alias gsa='git stash apply'
 
 # tools
 alias score='sensors | grep Core'
@@ -44,4 +50,3 @@ alias pipc='pip config list -v'
 
 # smarteye
 alias stc='cd /home/yanuar/Workspace/gitlab/trackercore'
-
