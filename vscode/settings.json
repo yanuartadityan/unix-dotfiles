@@ -31,14 +31,24 @@
   "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "n"],
-      "commands": [":nohl"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     }
   ],
   "vim.handleKeys": {
@@ -54,5 +64,39 @@
     "<C-S-E>": false,
     "<C-S-D>": false
   },
-  "vim.smartRelativeLine": true
+  "vim.smartRelativeLine": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "underline-thin",
+  "workbench.colorTheme": "Tokyo City Darker",
+  "glassit.alpha": 255,
+  "window.menuBarVisibility": "toggle",
+  "markdown-preview-enhanced.previewTheme": "one-dark.css",
+  "python.formatting.provider": "black",
+  "window.titleBarStyle": "custom",
+  "editor.lineNumbers": "relative",
+  "[yaml]": {
+    "editor.autoIndent": "advanced"
+  },
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,236,236,0.3)"
+  ],
+  "workbench.tree.indent": 10,
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.activeBackground": "#00AFFF",
+    "tree.indentGuidesStroke": "#00AFFF",
+    "tree.inactiveIndentGuidesStroke": "#4D4D4D"
+  },
+  "editor.fontSize": 13.5,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.formatOnSave": true,
+  "indentRainbow.ignoreLinePatterns": [
+    "/[ \t]* [*]/g",
+    "/[ \t]+[/]{2}/g"
+  ],
+  "terminal.integrated.fontSize": 12
 }
