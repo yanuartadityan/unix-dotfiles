@@ -1,6 +1,5 @@
 {
-  "workbench.colorTheme": "Xcode Default Dark Customized Version",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "helium-icon-theme",
   "editor.tabSize": 2,
   // "cmake.buildDirectory": "${userHome}/Workspace/builds/${workspaceRootFolderName}/${variant:customer}/${buildType}",
   "cmake.configureOnOpen": true,
@@ -14,7 +13,7 @@
     "*.py": "python"
   },
   "todohighlight.isEnable": true,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+  "editor.fontFamily": "'JetBrainsSansMono Nerd Font', 'monospace', monospace",
   "editor.fontLigatures": false,
   "gitlens.autolinks": [
     {
@@ -53,6 +52,7 @@
   ],
   "vim.handleKeys": {
     "<C-f>": false,
+    "<C-h>": false,
     "<C-a>": false,
     "<C-w>": false,
     "<C-d>": true,
@@ -77,6 +77,7 @@
   "[yaml]": {
     "editor.autoIndent": "advanced"
   },
+  "editor.formatOnSave": true,
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 1,
   "indentRainbow.colors": [
