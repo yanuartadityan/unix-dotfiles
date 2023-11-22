@@ -69,5 +69,48 @@
   {
     "key": "ctrl+alt+k",
     "command": "workbench.action.terminal.resizePaneUp"
+  },
+  {
+    "key": "ctrl+shift+l l",
+    "command": "cmake.selectLaunchTarget"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "selectPrevPageSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-selectPrevPageSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+alt+]",
+    "command": "extension.vim_ctrl+pagedown",
+    "when": "editorTextFocus && vim.active && vim.use<C-pagedown> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "-extension.vim_ctrl+pagedown",
+    "when": "editorTextFocus && vim.active && vim.use<C-pagedown> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+alt+[",
+    "command": "extension.vim_ctrl+pageup",
+    "when": "editorTextFocus && vim.active && vim.use<C-pageup> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-extension.vim_ctrl+pageup",
+    "when": "editorTextFocus && vim.active && vim.use<C-pageup> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+shift+g b",
+    "command": "-gitlens.toggleFileBlame",
+    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+  },
+  {
+    "key": "ctrl+shift+g b",
+    "command": "gitlens.views.branches.focus"
   }
 ]

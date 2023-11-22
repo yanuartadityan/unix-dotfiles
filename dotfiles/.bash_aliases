@@ -1,18 +1,21 @@
 alias ss='clear && neofetch'
 alias sbc='source ~/.zshrc'
-alias vbc='vim ~/.zshrc'
+alias vbc='nvim ~/.zshrc'
 alias sba='source ~/.bash_aliases'
-alias vba='vim ~/.bash_aliases'
-alias vbase='vim ~/.zsh_aliases'
+alias vba='nvim ~/.bash_aliases'
+alias vbase='nvim ~/.zsh_aliases'
 alias als='cat ~/.bash_aliases | grep alias'
 alias alconf='nvim ~/.config/alacritty/alacritty.yml'
 alias tmconf='nvim ~/.tmux.conf'
+alias olv='~/.scripts/lv.sh'
+alias olvf='~/.scripts/lvf.sh'
 
-alias ll='ls -al'
+alias ll='ls -al --block-size=K'
+alias ldu='du -h --max-depth=1 | sort -h'
 
+alias vnn='source ~/Workspace/.nn/bin/activate'
 alias vse='source ~/Workspace/.se/bin/activate'
 alias vdl='source ~/Workspace/.dl/bin/activate'
-alias vfa='source ~/Workspace/.fapi/bin/activate'
 alias vfa='source ~/Workspace/.fapi/bin/activate'
 
 # smart-eye specific
@@ -40,6 +43,7 @@ alias gst='git stash'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
+alias gdt='git difftool'
 
 # tools
 alias score='sensors | grep Core'
@@ -50,3 +54,6 @@ alias pipc='pip config list -v'
 
 # smarteye
 alias stc='cd /home/yanuar/Workspace/gitlab/trackercore'
+
+# others
+alias godot='/home/yanuar/Applications/Godot/Godot_v4.0.2-stable_linux.x86_x64'

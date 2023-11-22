@@ -60,9 +60,86 @@
       },
       "args": [
         "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
-        "--log-dir", "/home/yanuar/Downloads/Artifacts/drowsiness/86581-Drowsiness-42bc6b166ab1-2023-02-18-094959/",
-        "--num-workers", "12",
-        // "--log-level", "INFO"
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/",
+        "--num-workers", "1",
+        "--log-level", "DEBUG"
+      ]
+    },
+    {
+      "name": "SEP: Analyze Drowsiness Logs Memory Profiling",
+      "type": "python",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "module": "cProfile",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "args": [
+        "run", "python3", "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/",
+        "--num-workers", "1",
+        "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Analyze Drowsiness Logs Multicores",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/",
+        "--num-workers", "20",
+        "--log-level", "ERROR",
+      ]
+    },
+    {
+      "name": "SEP: Analyze Distraction",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/distraction/107069-DMF-619dc147c994-2023-11-13-083034/",
+        "--num-workers", "1",
+        "--log-level", "DEBUG",
+      ]
+    },
+        {
+      "name": "SEP: Analyze Distraction Multiprocess",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/distraction/107069-DMF-619dc147c994-2023-11-13-083034/",
+        "--num-workers", "28",
+        "--log-level", "ERROR",
       ]
     },
     {
@@ -75,15 +152,31 @@
       "stopOnEntry": false,
       "args": [
         "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
-        "--log-dir", "/home/yanuar/Downloads/Artifacts/secondarytask/55467-Q-fdbeeac8983c-2022-09-05-132854-phoning/",
-        "--num-workers", "1"
-        // "--log-level", "INFO"
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/facialactivity/98665-DMF-85c343f0904a-2023-08-07-180553/",
+        "--num-workers", "1",
+        "--log-level", "INFO"
+      ]
+    },
+    {
+      "name": "SEP: Analyze SecTask Logs Multicores",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/",
+        "--num-workers", "16",
+        "--log-level", "INFO"
       ]
     },
     {
       "name": "SEP: Analyze Eyelid Logs",
       "type": "python",
       "request": "launch",
+        
       "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
       "console": "integratedTerminal",
       "justMyCode": true,
@@ -111,6 +204,22 @@
       ]
     },
     {
+      "name": "SEP: Analyze Facial Activity Yawning FP/h",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/analyze_test_set.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/463-kpi-external.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/facialactivity/106338-L-602c9c1af3e3-2023-10-31-151132/",
+        "--num-workers", "24",
+        "--log-level", "INFO"
+      ]
+
+    },
+    {
       "name": "SEP: Create KPI Reports",
       "type": "python",
       "request": "launch",
@@ -119,8 +228,8 @@
       "justMyCode": true,
       "stopOnEntry": false,
       "args": [
-        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/463-kpi-external.yaml",
-        "--log-dir", "/home/yanuar/Downloads/Artifacts/eyelid/71602-L-28f2e68f7ee3-2023-01-31-163149/",
+        "--kpi-config", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/configs/DMF.yaml",
+        "--log-dir", "/home/yanuar/Downloads/Artifacts/distraction/107069-DMF-619dc147c994-2023-11-13-083034/",
         "--log-level", "DEBUG"
       ]
     },
@@ -223,10 +332,10 @@
       "justMyCode": true,
       "stopOnEntry": false,
       "args": [
-        "-j", "/home/yanuar/Downloads/Artifacts/eventkpi/kpi-bin/output/output/recordings.json",
-        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/annotation-data/generated/",
+        "-j", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/recordings.json",
+        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/generated",
         "--gt-path", "/home/yanuar/Workspace/gitlab/annotationdata/",
-        "-l", "/mnt/nas/Artifacts/SmarteyeEmbedded/TrackerCore/kpi-archive/manual-trigger/SleepEye-highway-cam-1-rem.json/92104-DMF-26605c0112c2-2023-05-03-191627"
+        "-l", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/"
       ]
     },
     {  // This equivalent to run-event-kpi-analysis
@@ -239,17 +348,17 @@
       "stopOnEntry": false,
       "args": [
         // Use the recordings.json to get individual recording index
-        "-j", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556/recordings.json",
+        "-j", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/recordings.json",
         // Event KPI config (yawning_kpi.yaml or blink_kpi.yaml)
-        "-c", "${workspaceFolder}/convert-analyze/kpi/event_analysis/assets/all_kpi.yaml",
+        "-c", "${workspaceFolder}/convert-analyze/kpi/event_analysis/assets/blink_kpi.yaml",
         // Annotation GT repo, which apparently also the artifact from annotation-data workflow
         "-gt", "/home/yanuar/Workspace/gitlab/annotationdata/",
         // Prediction which is artifact from run-generate-event-annotation (-o)
-        "-pr", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556/annotations/",
+        "-pr", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/generated",
         // Logs, obviously the archive a.k.a output from build step
-        "-l", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556/",
+        "-l", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/",
         // Analysis output (VERBOSE output for now)
-        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/analysis-output/",
+        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/509012-DMF-3043aed827de-2023-11-08-160924/kpi",
         // NAS mount point.
         "--nas-mount-point", "/mnt/nas"
       ]
@@ -258,17 +367,51 @@
       "name": "Util: Run Export DMF GT AnnotData",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/convert-analyze/kpi/event_analysis/export_gt.py",
+      "program": "${workspaceFolder}/convert-analyze/kpi/event_analysis/run_export_gt.py",
       "console": "integratedTerminal",
       "justMyCode": true,
       "stopOnEntry": false,
       "args": [
         "-gt", "/home/yanuar/Workspace/gitlab/annotationdata/",
-        "-ar", "/home/yanuar/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556",
-        "-c", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/event_analysis/assets/all_kpi.yaml",
-        "-o", "${userHome}/Downloads/Artifacts/eventkpi/92277-DMF-2c6eeaf3da5c-2023-05-04-211556", 
+        // "-ar", "/mnt/nas/Artifacts/SmarteyeEmbedded/TrackerCore/kpi-archive/nightly/drowsiness-kpi-large-cam-1-2-rem.json/88362-Drowsiness-5e4ffaa709c8-2023-06-12-165027",
+        "-rec", "SleepEye-highway-cam-1-rem-events.json",
+        "-c", "/home/yanuar/Workspace/gitlab/trackercore/convert-analyze/kpi/event_analysis/export/all_labels.yaml",
+        "-o", "/mnt/nas/AS/Work/dmf/default-export",
         "-nas", "/mnt/nas",
-        "-cam", "1"
+        "-cam", "0"
+      ]
+    },
+    {
+      "name": "Util: Run Archive Event Annot",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/convert-analyze/kpi/event_analysis/archive_event_annotations.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "args": [
+        "-r", "/home/yanuar/Downloads/Artifacts/eventkpi/93946-DMF-042f0625172e-2023-05-19-203031/recordings.json",
+        "-o", "/home/yanuar/Downloads/Artifacts/eventkpi/93946-DMF-042f0625172e-2023-05-19-203031/archive_output/",
+        "-n", "/mnt/nas",
+        "-t", "glpat-8hcHGVZ78ManxJ7XEzrK"
+      ]
+    },
+    {
+      "name": "Util: Patch Frame-0 No Timestamp",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/output/tools/patch_timestamp.py",
+      "env": {
+        "DISPLAY":":1",
+        "PYDEVD_WARN_EVALUATION_TIMEOUT": "500"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+        "--fps", "60",
+        // "--copy-dir", "/mnt/nas/AS/Work/dmf/drowsiness-kpi-large-cam-1-2-rem",
+        "--list", "infile",
+        "/mnt/nas/AS/Projects/000_DMF/Drowsiness/stable/drowsiness-kpi-large-cam-0/DM119-985-1136-39-20200210T165829.sec"
       ]
     },
     {

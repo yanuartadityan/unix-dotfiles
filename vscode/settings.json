@@ -1,7 +1,6 @@
 {
   "workbench.iconTheme": "helium-icon-theme",
   "editor.tabSize": 2,
-  // "cmake.buildDirectory": "${userHome}/Workspace/builds/${workspaceRootFolderName}/${variant:customer}/${buildType}",
   "cmake.configureOnOpen": true,
   "editor.minimap.maxColumn": 80,
   "[python]": {
@@ -10,19 +9,20 @@
   "discord.removeRemoteRepository": true,
   "discord.removeLowerDetails": true,
   "files.associations": {
-    "*.py": "python"
+    "*.py": "python",
+    "*.jinja2": "yaml"
   },
   "todohighlight.isEnable": true,
-  "editor.fontFamily": "'JetBrainsSansMono Nerd Font', 'monospace', monospace",
+  "editor.fontFamily": " 'Hack Nerd Font Mono', 'monospace', monospace",
   "editor.fontLigatures": false,
   "gitlens.autolinks": [
     {
-      "prefix": "TC-",
-      "url": "https://track.smarteye.se/youtrack/issue/TC-<num>"
+      "prefix": "TICKET-",
+      "url": "URL-<num>"
     },
     {
       "prefix": "DMF-",
-      "url": "https://track.smarteye.se/youtrack/issue/DMF-<num>"
+      "url": "URL-<num>"
     }
   ],
   "vim.easymotion": true,
@@ -30,24 +30,14 @@
   "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<leader>",
-        "n"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<leader>", "n"],
+      "commands": [":nohl"]
     }
   ],
   "vim.handleKeys": {
@@ -62,22 +52,21 @@
     "<C-b>": false,
     "<C-k>": false,
     "<C-S-E>": false,
-    "<C-S-D>": false
+    "<C-S-D>": false,
+    "<C-c>": false,
+    "<C-p>": false,
   },
   "vim.smartRelativeLine": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "underline-thin",
-  "workbench.colorTheme": "Tokyo City Darker",
   "glassit.alpha": 255,
   "window.menuBarVisibility": "toggle",
   "markdown-preview-enhanced.previewTheme": "one-dark.css",
-  "python.formatting.provider": "black",
   "window.titleBarStyle": "custom",
   "editor.lineNumbers": "relative",
   "[yaml]": {
     "editor.autoIndent": "advanced"
   },
-  "editor.formatOnSave": true,
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 1,
   "indentRainbow.colors": [
@@ -88,16 +77,38 @@
   ],
   "workbench.tree.indent": 10,
   "workbench.colorCustomizations": {
-    "editorIndentGuide.activeBackground": "#00AFFF",
+    "editorIndentGuide.activeBackground1": "#00AFFF",
     "tree.indentGuidesStroke": "#00AFFF",
     "tree.inactiveIndentGuidesStroke": "#4D4D4D"
   },
-  "editor.fontSize": 13.5,
   "editor.defaultFormatter": "ms-python.black-formatter",
   "editor.formatOnSave": true,
   "indentRainbow.ignoreLinePatterns": [
     "/[ \t]* [*]/g",
     "/[ \t]+[/]{2}/g"
   ],
-  "terminal.integrated.fontSize": 12
+  "terminal.integrated.fontSize": 12,
+  "clangd.path": "/home/yanuar/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
+  "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+  "C_Cpp.clang_format_style": "LLVM",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "workbench.colorTheme": "Andromeda Bordered",
+  "clang-format.fallbackStyle": "Google",
+  "editor.fontSize": 13.2,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "editor.overviewRulerBorder": false,
+  "window.commandCenter": false,
+  "markdown-preview-enhanced.plantumlServer": "https://kroki.io/plantuml/svg/",
+  "workbench.editor.empty.hint": "hidden",
+  "python.defaultInterpreterPath": "/home/yanuar/Workspace/.nn",
+  "gitlens.graph.minimap.enabled": false
 }
